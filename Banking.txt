@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Project1
+{
+    class Banking
+    {
+        double balance;
+        long accnum,aadhar;
+        public string name;
+       
+
+        public void getdetails()
+        {
+            Console.WriteLine("GIVE ACCOUNT DETAILS");
+            Console.WriteLine("enter your name");
+            name = Console.ReadLine();
+            Console.WriteLine("enter your accnum");
+            accnum = long.Parse(Console.ReadLine());
+            Console.WriteLine("enter aadhar number");
+            aadhar = long.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the balance");
+            balance = double.Parse(Console.ReadLine());
+
+        }
+       
+       
+        public void display()
+        {
+            //Console.WriteLine("ACCOUNT EXIST");
+            Console.WriteLine("NAME           :  "+name);
+            Console.WriteLine("ACCOUNT NUMBER :  "+accnum);
+            Console.WriteLine("AADHAR NUMBER  :  "+aadhar);
+            Console.WriteLine("BALANCE        :  "+balance);
+        }
+        public void deposit(double amount)
+        {
+            Console.WriteLine("Depositin:  "+amount);
+            balance = balance + amount;
+            Console.WriteLine("Amount deposited successfully");
+        }
+        public void withdraw(double amount)
+        {
+           
+            if (amount < balance)
+            {
+                balance = balance - amount;
+                Console.WriteLine("Withdraw success");
+            }
+            else
+            {
+                Console.WriteLine("Withdraw failed due to insufficient balance");
+            }
+            
+        }
+        public void checkbal()
+        {
+            Console.WriteLine("balance:  "+balance);
+        }
+    }
+}
